@@ -1,297 +1,452 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Primary Meta Tags -->
-    <title>Portfolio Template - Open source</title>
-    <meta name="title" content="Portfolio Template - Open source" />
-    <meta
-      name="description"
-      content="Build or customize your portfolio website using this super easy template. Free to use if you are a member of the community or a contributor to this project"
-    />
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Meta tags for SEO and sharing -->
+  <meta name="description" content="Harry L. Oakes IV - Producer and Filmmaker specializing in broadcast and performing arts content for Netflix, CBS, PBS, and Paramount+">
+  <meta name="keywords" content="producer, filmmaker, video producer, broadcast production, Kennedy Center, Netflix, CBS">
+  <meta name="author" content="Harry L. Oakes IV">
+  
+  <!-- Page Title -->
+  <title>Harry L. Oakes IV | Producer & Filmmaker</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content="https://github.com/CommunityPro/portfolio-html"
-    />
-    <meta property="og:title" content="Portfolio Template - Open source" />
-    <meta
-      property="og:description"
-      content="Build or customize your portfolio website using this super easy template. Free to use if you are a member of the community or a contributor to this project"
-    />
-    <meta
-      property="og:image"
-      content="https://user-images.githubusercontent.com/62628408/150613011-b78a7f5a-0af1-4312-aab0-0022e7258693.png"
-    />
+<body>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="container">
+      <div class="nav-con">
+        <!-- Logo -->
+        <div class="logo">
+          <a href="#home">Harry L. Oakes IV</a>
+        </div>
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta
-      property="twitter:url"
-      content="https://github.com/CommunityPro/portfolio-html"
-    />
-    <meta property="twitter:title" content="Portfolio Template - Open source" />
-    <meta
-      property="twitter:description"
-      content="Build or customize your portfolio website using this super easy template. Free to use if you are a member of the community or a contributor to this project"
-    />
-    <meta
-      property="twitter:image"
-      content="https://user-images.githubusercontent.com/62628408/150613011-b78a7f5a-0af1-4312-aab0-0022e7258693.png"
-    />
+        <!-- Menu -->
+        <ul class="menu">
+          <li><a href="#demo-reel">Demo Reel</a></li>
+          <li><a href="#projects">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
 
-    <!-- Link -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/assets/favicon/favicon-16x16.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="assets/favicon/android-chrome-192x192.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="512x512"
-      href="assets/favicon/android-chrome-512x512.png"
-    />
-    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico" />
-    <link rel="manifest" href="assets/favicon/site.webmanifest" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/utilities.css" />
-  </head>
-  <body>
-    <header id="hero">
-      <!-- Navbar -->
-      <nav class="navbar">
-        <div class="container">
-          <!-- Logo -->
-          <h1 id="logo">
-            <a href="https://github.com/CommunityPro/portfolio-html"
-              ><img src="./assets/logo.png" alt="Your Logo"
-            /></a>
-          </h1>
-          <!-- Navbar links -->
-          <ul class="nav-menu">
-            <li><a class="nav-link" href="#projects">PROJECTS</a></li>
-            <li><a class="nav-link" href="#">CONTACT</a></li>
-            <li><a class="nav-link" href="#">BlOG</a></li>
-            <li>
-              <a
-                class="nav-link btn btn-primary"
-                href="https://github.com/CommunityPro/portfolio-html"
-                >RESUME <i class="fas fa-arrow-right"></i
-              ></a>
-            </li>
+        <!-- Resume Button -->
+        <a href="./assets/Harry-Oakes-Resume.pdf" download class="btn">Resume</a>
 
-            <!-- Toggle switch -->
-            <div class="theme-switch">
-              <input type="checkbox" id="switch" />
-              <label class="toggle-icons" for="switch">
-                <img class="moon" src="assets/moon.svg" />
-                <img class="sun" src="assets/sun.svg" />
-              </label>
-            </div>
-            <!-- Hamburger menu -->
-          </ul>
-          <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+        <!-- Hamburger Menu (for mobile) -->
+        <div class="hamburger-menu">
+          <div class="bar"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-con">
+        <!-- Profile Image -->
+        <div class="hero-img">
+          <img src="./assets/profile-image.jpg" alt="Harry L. Oakes IV">
+        </div>
+
+        <!-- Hero Text -->
+        <div class="hero-text">
+          <h1>Hi, I'm Harry</h1>
+          <h2>Producer | Filmmaker | Kennedy Center</h2>
+          <p>I'm a producer and filmmaker at the Kennedy Center for the Performing Arts, where I create content for major broadcast networks and streaming platforms. With an M.A. in Producing from American University and hands-on experience across the entire production pipeline, I bring both creative vision and technical execution to every project. My work has featured artists like Conan O'Brien, Francis Ford Coppola, and Kevin Hart, reaching audiences on Netflix, CBS, and PBS.</p>
+          
+          <div class="hero-btns">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="mailto:harryoakesiv@gmail.com" class="btn btn-secondary">Get in Touch</a>
           </div>
         </div>
-      </nav>
+      </div>
+    </div>
+  </section>
 
-      <section class="header-container">
-        <img
-          class="profile-image"
-          src="assets/profile-image.svg"
-          alt=""
-        />
-        <h1>Hi I'm Harry</h1>
-
-        <div class="content-text">
-          <h2>Building digital</h2>
-          <h2>products, brands, and experience.</h2>
-
-          <p>
-            A Frontend Developer and Visual Designer with experience in web
-            design, brand identity and product design.
-          </p>
-        </div>
-        <a
-          href="https://github.com/CommunityPro/portfolio-html"
-          class="btn btn-secondary"
-          target="_blank"
-          >Connect With Me</a
-        >
-      </section>
-    </header>
-
-    <!-- Projects -->
-    <section id="projects" class="project-container container">
-      <div class="division"></div>
-      <div class="content-text">
-        <h2>Projects</h2>
-        <p>Check out some of my personal and paid projects</p>
+  <!-- DEMO REEL SECTION -->
+  <section id="demo-reel" class="demo-reel">
+    <div class="container">
+      <div class="section-heading">
+        <h3>Demo Reel</h3>
+        <p>A showcase of my recent broadcast and digital work, spanning producing, cinematography, and storytelling.</p>
       </div>
 
-      <article class="project">
-        <!-- Project 1 -->
-        <div href="" class="card">
-          <div class="project-info">
-            <div class="project-bio">
-              <h3>Project One</h3>
-              <p>React, Redux, SASS</p>
-            </div>
-
-            <div class="project-link">
-              <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="#" target="_blank"><i class="fas fa-globe"></i></a>
-            </div>
+      <!-- Demo Reel Video Container -->
+      <div class="demo-reel-container">
+        <!-- PLACEHOLDER: Replace with your YouTube embed when ready -->
+        <div class="video-placeholder">
+          <img src="./assets/demo-reel-thumb.jpg" alt="Demo Reel Thumbnail">
+          <div class="placeholder-text">
+            <p>Demo Reel Coming Soon</p>
+            <p class="small">Currently in production</p>
           </div>
         </div>
-
-        <!-- Project 2 -->
-        <div href="" class="card">
-          <div class="project-info">
-            <div class="project-bio">
-              <h3>Project Two</h3>
-              <p>React, Redux, SASS</p>
-            </div>
-
-            <div class="project-link">
-              <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="#" target="_blank"><i class="fas fa-globe"></i></a>
-            </div>
-          </div>
+        
+        <!-- WHEN DEMO REEL IS READY, UNCOMMENT THIS AND DELETE THE PLACEHOLDER ABOVE:
+        <div class="video-wrapper">
+          <iframe 
+            width="100%" 
+            height="100%" 
+            src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+            title="Harry Oakes Demo Reel" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
         </div>
-
-        <!-- Porject 3 -->
-        <div href="" class="card">
-          <div class="project-info">
-            <div class="project-bio">
-              <h3>Project Three</h3>
-              <p>React, Redux, SASS</p>
-            </div>
-
-            <div class="project-link">
-              <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="#" target="_blank"><i class="fas fa-globe"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div href="" class="card">
-          <div class="project-info">
-            <div class="project-bio">
-              <h3>Project Four</h3>
-              <p>React, Redux, SASS</p>
-            </div>
-
-            <div class="project-link">
-              <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="#" target="_blank"><i class="fas fa-globe"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 5 -->
-        <div href="" class="card">
-          <div class="project-info">
-            <div class="project-bio">
-              <h3>Project Five</h3>
-              <p>React, Redux, SASS</p>
-            </div>
-
-            <div class="project-link">
-              <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="#" target="_blank"><i class="fas fa-globe"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 6 -->
-        <div href="" class="card">
-          <div class="project-info">
-            <div class="project-bio">
-              <h3>Project Six</h3>
-              <p>React, Redux, SASS</p>
-            </div>
-
-            <div class="project-link">
-              <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="#" target="_blank"><i class="fas fa-globe"></i></a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <a href="#" class="btn btn-secondary"
-        target="_blank" >See More <i class="fas fa-arrow-right"></i
-      ></a>
-    </section>
-
-    <footer id="footer">
-      <div class="container">
-        <a href="mailto:communitypro47@gmail.com">communitypro47@gmail.com</a>
-        <!-- Social links -->
-        <div class="social">
-          <a href="#" target="_blank"
-            ><img src="./assets/facebook-icon.svg" alt="Facebook"
-          /></a>
-          <a href="#" target="_blank"><img src="./assets/twitter-icon.svg" alt="Twitter" /></a>
-          <a href="#" target="_blank"
-            ><img src="./assets/linkedin-icon.svg" alt="Linkedin"
-          /></a>
-          <a href="#" target="_blank"><img src="./assets/github-icon.svg" alt="GitHub" /></a>
-          <a href="#" target="_blank"
-            ><img src="./assets/hashnode-icon.svg" alt="Hashnode"
-          /></a>
-        </div>
-        <!-- Attribution -->
-        <div class="attribution">
-          <a
-            href="https://github.com/CommunityPro/portfolio-html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="https://user-images.githubusercontent.com/62628408/157202263-9174da24-b19a-4017-9b7c-a1d26ae8f014.svg"
-              alt="attribution"
-              width="150px"
-            />
-          </a>
-        </div>
-        <p>Copyright &copy; Communitypro <span id="datee"></span>, All rights reserved</p>
+        -->
       </div>
-    </footer>
-    <script src="js/script.js"></script>
-  </body>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-heading">
+        <h3>Selected Work</h3>
+        <p>From broadcast productions for Netflix and CBS to digital storytelling for the Kennedy Center, here's a selection of projects that demonstrate my range as a producer and filmmaker.</p>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid">
+        
+        <!-- PROJECT 1: Conan Mark Twain -->
+        <div class="project-card">
+          <div class="project-img">
+            <a href="https://youtu.be/vFzg7Fu10yU" target="_blank" rel="noopener">
+              <img src="./assets/project-01-conan-mark-twain.jpg" alt="2025 Mark Twain Prize - Conan O'Brien">
+              <div class="project-overlay">
+                <span class="platform-badge">Netflix</span>
+              </div>
+            </a>
+          </div>
+          <div class="project-info">
+            <h4><a href="https://youtu.be/vFzg7Fu10yU" target="_blank" rel="noopener">2025 Mark Twain Prize (Conan O'Brien)</a></h4>
+            <p class="role">Associate Producer</p>
+            <p class="description">Backstage coverage and red carpet for comedy's biggest night.</p>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: 48th Kennedy Center Honors -->
+        <div class="project-card">
+          <div class="project-img">
+            <a href="https://youtube.com/playlist?list=PL14hRqd0PELF0ABdBriFC1iuxKv__FwiY" target="_blank" rel="noopener">
+              <img src="./assets/project-02-kc-honors-48.jpg" alt="48th Kennedy Center Honors">
+              <div class="project-overlay">
+                <span class="platform-badge">CBS</span>
+              </div>
+            </a>
+          </div>
+          <div class="project-info">
+            <h4><a href="https://youtube.com/playlist?list=PL14hRqd0PELF0ABdBriFC1iuxKv__FwiY" target="_blank" rel="noopener">48th Kennedy Center Honors</a></h4>
+            <p class="role">Producer</p>
+            <p class="description">Annual celebration honoring lifetime achievements in the performing arts.</p>
+          </div>
+        </div>
+
+        <!-- PROJECT 3: Kevin Hart Mark Twain -->
+        <div class="project-card">
+          <div class="project-img">
+            <a href="https://youtu.be/Os-f8p9jBsE" target="_blank" rel="noopener">
+              <img src="./assets/project-03-kevin-hart-mark-twain.jpg" alt="2024 Mark Twain Prize - Kevin Hart">
+              <div class="project-overlay">
+                <span class="platform-badge">Netflix</span>
+              </div>
+            </a>
+          </div>
+          <div class="project-info">
+            <h4><a href="https://youtu.be/Os-f8p9jBsE" target="_blank" rel="noopener">2024 Mark Twain Prize (Kevin Hart)</a></h4>
+            <p class="role">Associate Producer | Producer (Interview)</p>
+            <p class="description">Behind-the-scenes and interview with Kevin Hart on winning the Mark Twain Prize.</p>
+          </div>
+        </div>
+
+        <!-- PROJECT 4: Chris Thile & NSO -->
+        <div class="project-card">
+          <div class="project-img">
+            <a href="https://youtu.be/tATTbN_Sl0k" target="_blank" rel="noopener">
+              <img src="./assets/project-04-chris-thile-nso.jpg" alt="Chris Thile & National Symphony Orchestra">
+              <div class="project-overlay">
+                <span class="platform-badge">Digital</span>
+              </div>
+            </a>
+          </div>
+          <div class="project-info">
+            <h4><a href="https://youtu.be/tATTbN_Sl0k" target="_blank" rel="noopener">Chris Thile & The National Symphony Orchestra</a></h4>
+            <p class="role">Associate Producer</p>
+            <p class="description">Multi-camera concert production featuring mandolin virtuoso Chris Thile.</p>
+          </div>
+        </div>
+
+        <!-- PROJECT 5: 47th Kennedy Center Honors -->
+        <div class="project-card">
+          <div class="project-img">
+            <a href="https://www.youtube.com/playlist?list=PL14hRqd0PELFPIOI6ISCxjx_S4rQk59JJ" target="_blank" rel="noopener">
+              <img src="./assets/project-05-kc-honors-47.jpg" alt="47th Kennedy Center Honors">
+              <div class="project-overlay">
+                <span class="platform-badge">CBS</span>
+              </div>
+            </a>
+          </div>
+          <div class="project-info">
+            <h4><a href="https://youtube.com/playlist?list=PL14hRqd0PELHECdy5i0UnhDgWmiePcPmt" target="_blank" rel="noopener">47th Kennedy Center Honors</a></h4>
+            <p class="role">Associate Producer</p>
+            <p class="description">Broadcast production celebrating icons in music, theater, and dance.</p>
+          </div>
+        </div>
+
+        <!-- PROJECT 6: Monuments -->
+        <div class="project-card">
+          <div class="project-img">
+            <a href="https://youtu.be/WxjVUEwzFbQ" target="_blank" rel="noopener">
+              <img src="./assets/project-06-monuments.jpg" alt="The Making of Monuments: A Suite for DC">
+              <div class="project-overlay">
+                <span class="platform-badge">Digital Original</span>
+              </div>
+            </a>
+          </div>
+          <div class="project-info">
+            <h4><a href="https://youtu.be/WxjVUEwzFbQ" target="_blank" rel="noopener">The Making of "Monuments: A Suite for DC"</a></h4>
+            <p class="role">Producer | Director | DP | Editor</p>
+            <p class="description">Documentary following composer Carlos Simon's creative process.</p>
+          </div>
+        </div>
+
+        <!-- PROJECT 7: Pathways to Performance -->
+        <div class="project-card">
+          <div class="project-img">
+            <a href="https://youtu.be/244Zu9EPyWc" target="_blank" rel="noopener">
+              <img src="./assets/project-07-pathways.jpg" alt="Pathways to Performance">
+              <div class="project-overlay">
+                <span class="platform-badge">Digital Original</span>
+              </div>
+            </a>
+          </div>
+          <div class="project-info">
+            <h4><a href="https://youtu.be/244Zu9EPyWc" target="_blank" rel="noopener">Pathways to Performance</a></h4>
+            <p class="role">Producer | Editor</p>
+            <p class="description">Exploring diverse career journeys in the performing arts.</p>
+          </div>
+        </div>
+
+        <!-- PROJECT 8: Falling in Love Through Dance -->
+        <div class="project-card">
+          <div class="project-img">
+            <a href="https://youtu.be/ufakI_ayiJ0" target="_blank" rel="noopener">
+              <img src="./assets/project-08-hope-boykin.jpg" alt="Falling in Love Through Dance">
+              <div class="project-overlay">
+                <span class="platform-badge">Digital Original</span>
+              </div>
+            </a>
+          </div>
+          <div class="project-info">
+            <h4><a href="https://youtu.be/ufakI_ayiJ0" target="_blank" rel="noopener">Falling in Love Through Dance</a></h4>
+            <p class="role">Producer | DP | Editor</p>
+            <p class="description">Hope Boykin breaks down her Paul Taylor Dance Company world premiere.</p>
+          </div>
+        </div>
+
+        <!-- PROJECT 9: How Summertime Became an American Classic -->
+        <div class="project-card">
+          <div class="project-img">
+            <a href="https://youtu.be/q6-XQct3KRA" target="_blank" rel="noopener">
+              <img src="./assets/project-09-summertime.jpg" alt="How Summertime Became an American Classic">
+              <div class="project-overlay">
+                <span class="platform-badge">Digital Original</span>
+              </div>
+            </a>
+          </div>
+          <div class="project-info">
+            <h4><a href="https://youtu.be/q6-XQct3KRA" target="_blank" rel="noopener">How "Summertime" Became an American Classic</a></h4>
+            <p class="role">Producer | Editor</p>
+            <p class="description">Exploring the cultural legacy of Gershwin's iconic song.</p>
+          </div>
+        </div>
+
+        <!-- PROJECT 10: Kennedy Center Honors Highlights -->
+        <div class="project-card">
+          <div class="project-img">
+            <a href="https://youtu.be/CDIskcBtHGM" target="_blank" rel="noopener">
+              <img src="./assets/project-10-honors-highlights.jpg" alt="Kennedy Center Honors Highlights">
+              <div class="project-overlay">
+                <span class="platform-badge">CBS</span>
+              </div>
+            </a>
+          </div>
+          <div class="project-info">
+            <h4><a href="https://youtu.be/CDIskcBtHGM" target="_blank" rel="noopener">Kennedy Center Honors Highlights</a></h4>
+            <p class="role">Producer | Editor</p>
+            <p class="description">Recap of memorable moments from the annual broadcast event.</p>
+          </div>
+        </div>
+
+        <!-- PROJECT 11: Francis Ford Coppola -->
+        <div class="project-card">
+          <div class="project-img">
+            <a href="https://youtu.be/yfpd0yOVjlE" target="_blank" rel="noopener">
+              <img src="./assets/project-11-coppola.jpg" alt="Francis Ford Coppola on Receiving a Kennedy Center Honor">
+              <div class="project-overlay">
+                <span class="platform-badge">CBS</span>
+              </div>
+            </a>
+          </div>
+          <div class="project-info">
+            <h4><a href="https://youtu.be/yfpd0yOVjlE" target="_blank" rel="noopener">Francis Ford Coppola on Receiving a Kennedy Center Honor</a></h4>
+            <p class="role">Associate Producer | Editor | Cam Op</p>
+            <p class="description">Intimate interview with legendary director Francis Ford Coppola.</p>
+          </div>
+        </div>
+
+        <!-- PROJECT 12: George Lucas on Coppola -->
+        <div class="project-card">
+          <div class="project-img">
+            <a href="https://youtu.be/eyhZBergl4Q" target="_blank" rel="noopener">
+              <img src="./assets/project-12-lucas-coppola.jpg" alt="George Lucas on Coppola">
+              <div class="project-overlay">
+                <span class="platform-badge">CBS</span>
+              </div>
+            </a>
+          </div>
+          <div class="project-info">
+            <h4><a href="https://youtu.be/eyhZBergl4Q" target="_blank" rel="noopener">George Lucas on Coppola: "One of the Greatest of all Time"</a></h4>
+            <p class="role">Associate Producer | Editor | Cam Op</p>
+            <p class="description">George Lucas reflects on his mentor and collaborator.</p>
+          </div>
+        </div>
+
+        <!-- PROJECT 13: Kevin Hart Interview -->
+        <div class="project-card">
+          <div class="project-img">
+            <a href="https://youtu.be/Os-f8p9jBsE" target="_blank" rel="noopener">
+              <img src="./assets/project-13-kevin-hart-interview.jpg" alt="Kevin Hart - What it Means to Win">
+              <div class="project-overlay">
+                <span class="platform-badge">Netflix</span>
+              </div>
+            </a>
+          </div>
+          <div class="project-info">
+            <h4><a href="https://youtu.be/Os-f8p9jBsE" target="_blank" rel="noopener">Kevin Hart - What it Means to Win the Mark Twain Prize</a></h4>
+            <p class="role">Producer | Cam Op | Editor</p>
+            <p class="description">Exclusive interview capturing Kevin Hart's reaction to winning.</p>
+          </div>
+        </div>
+
+        <!-- PROJECT 14: Conan Red Carpet -->
+        <div class="project-card">
+          <div class="project-img">
+            <a href="https://youtu.be/PdvWCJkmifw" target="_blank" rel="noopener">
+              <img src="./assets/project-14-conan-red-carpet.jpg" alt="Conan O'Brien Red Carpet">
+              <div class="project-overlay">
+                <span class="platform-badge">Netflix</span>
+              </div>
+            </a>
+          </div>
+          <div class="project-info">
+            <h4><a href="https://youtu.be/PdvWCJkmifw" target="_blank" rel="noopener">Conan O'Brien - 2025 Mark Twain Prize Red Carpet</a></h4>
+            <p class="role">Producer | Editor | Cam Op</p>
+            <p class="description">Live red carpet coverage featuring comedy legends.</p>
+          </div>
+        </div>
+
+        <!-- PROJECT 15: Dragon King's Daughter -->
+        <div class="project-card">
+          <div class="project-img">
+            <a href="https://youtu.be/HRwEBz-Vjo0" target="_blank" rel="noopener">
+              <img src="./assets/project-15-dragon-king.jpg" alt="The Dragon King's Daughter Promo">
+              <div class="project-overlay">
+                <span class="platform-badge">Promo</span>
+              </div>
+            </a>
+          </div>
+          <div class="project-info">
+            <h4><a href="https://youtu.be/HRwEBz-Vjo0" target="_blank" rel="noopener">The Dragon King's Daughter Promo</a></h4>
+            <p class="role">DP | Editor</p>
+            <p class="description">Cinematic promotional piece showcasing visual storytelling.</p>
+          </div>
+        </div>
+
+      </div>
+      <!-- End Projects Grid -->
+
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-heading">
+        <h3>About Me</h3>
+      </div>
+      
+      <div class="about-content">
+        <p>I started my career behind the camera as a videographer and camera operator, learning production from the ground up. But the more I worked, the more I realized my passion wasn't just capturing images—it was shaping stories from concept to screen.</p>
+
+        <p>That realization led me to pursue an M.A. in Producing at American University, where I focused on development, pitching, and fundraising. Now, as a Senior Filmmaker at the Kennedy Center, I combine both worlds: leading productions for major networks while staying hands-on with the craft.</p>
+
+        <p>I've had the privilege of working on high-profile broadcasts like the Kennedy Center Honors and Mark Twain Prize, collaborating with incredible artists and reaching millions of viewers. My goal is to continue growing as a producer, with a long-term focus on development and distribution in the film and television industry.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-heading">
+        <h3>Get in Touch</h3>
+        <p>I'm always interested in new opportunities and collaborations.</p>
+      </div>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <h4>Email</h4>
+          <a href="mailto:harryoakesiv@gmail.com">harryoakesiv@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <h4>Phone</h4>
+          <a href="tel:+12408050193">(240) 805-0193</a>
+        </div>
+        <div class="contact-item">
+          <h4>Location</h4>
+          <p>Washington, DC</p>
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div class="social-links">
+        <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <img src="./assets/linkedin-icon.svg" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/harryoakesiv" target="_blank" rel="noopener" aria-label="GitHub">
+          <img src="./assets/github-icon.svg" alt="GitHub">
+        </a>
+        <a href="https://vimeo.com/yourprofile" target="_blank" rel="noopener" aria-label="Vimeo">
+          <img src="./assets/vimeo-icon.svg" alt="Vimeo">
+        </a>
+        <!-- Add more social links as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Harry L. Oakes IV. All rights reserved.</p>
+      <p class="footer-note">Portfolio built with <a href="https://github.com/CommunityPro/portfolio-html" target="_blank" rel="noopener">CommunityPro template</a></p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+</body>
 </html>
