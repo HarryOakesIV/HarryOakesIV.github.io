@@ -1357,13 +1357,34 @@
     </div>
   </footer>
 
-  <!-- VIDEO LIGHTBOX -->
+<!-- ===== VIDEO LIGHTBOX ===== -->
+
   <div class="lightbox-overlay" id="videoLightbox">
     <div class="lightbox-content">
       <button class="lightbox-close" aria-label="Close video">&times;</button>
-      <iframe id="lightboxIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <!-- Playlist indicator bar (hidden by default, shown via JS for playlists) -->
+      <div class="lightbox-playlist-bar" id="lightboxPlaylistBar">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="8" y1="6" x2="21" y2="6"></line>
+          <line x1="8" y1="12" x2="21" y2="12"></line>
+          <line x1="8" y1="18" x2="21" y2="18"></line>
+          <line x1="3" y1="6" x2="3.01" y2="6"></line>
+          <line x1="3" y1="12" x2="3.01" y2="12"></line>
+          <line x1="3" y1="18" x2="3.01" y2="18"></line>
+        </svg>
+        <span>Playlist &mdash; scroll through videos in the player below</span>
+      </div>
+
+      <div class="lightbox-iframe-wrap">
+        <iframe id="lightboxIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
     </div>
   </div>
+
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+  <script src="js/lightbox.js"></script>
 
   <!-- JavaScript -->
   <script src="js/script.js"></script>
