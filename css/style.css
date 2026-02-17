@@ -531,7 +531,11 @@ body {
 /* ===== ABOUT SECTION ===== */
 .about {
   padding: 80px 0;
-  background: var(--bg-secondary, #fafafa);
+  background: #1a1a1a;
+}
+
+.about .section-heading h3 {
+  color: var(--text-color-two, #ffffff);
 }
 
 .about-content {
@@ -542,7 +546,7 @@ body {
 .about-content p {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: var(--text-color, #1a1a1a);
+  color: var(--text-color-two, #ffffff);
   margin-bottom: 1.5rem;
 }
 
