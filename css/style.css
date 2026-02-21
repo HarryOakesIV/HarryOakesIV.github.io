@@ -16,7 +16,7 @@
   --text-color: #222222;
   --text-color-two: #edf0f3;
   --text-secondary: #7a97a7;
-  --bg-secondary: #091525;
+  --bg-secondary: #0f2139;
   --card-background: #f4f4f4;
   --bg-secondary-two: #111111;
   --accent-color: #f1a34e;
@@ -27,9 +27,10 @@
   --color-black: #000000;
 
   /* RGB channels for rgba() */
-  --bg-primary-rgb: 15, 33, 57;
+  --bg-primary-rgb: 0, 0, 0;
   --bg-surface-rgb: 26, 47, 74;
   --primary-color-rgb: 241, 163, 78;
+  --secondary-color-rgb: 255, 211, 92;
   --text-secondary-rgb: 122, 151, 167;
 
   --shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
@@ -107,7 +108,7 @@ body > nav > .container {
 .logo a {
   font-size: 1.1rem;
   font-weight: var(--weight-bold);
-  color: var(--text-color);
+  color: var(--text-secondary);
   white-space: nowrap;
 }
 
@@ -139,7 +140,7 @@ body > nav .btn {
   padding: 0.5rem 1.4rem;
   border-radius: 4px;
   background: var(--primary-color);
-  color: var(--bg-primary);
+  color: var(--text-color);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   transition: background 0.2s ease;
@@ -362,13 +363,15 @@ body > nav .btn:hover {
 
 /* ===== PROJECTS SECTION ENHANCEMENTS ===== */
 .projects {
-  padding: 80px 0;
+  padding: 5px 0 80px;
   background: var(--bg-primary);
 }
 
 .section-heading {
   text-align: center;
   margin-bottom: 60px;
+  border-top: 1px solid rgba(var(--text-secondary-rgb), 0.15);
+  padding-top: 60px;
 }
 
 .section-heading h3 {
@@ -394,7 +397,7 @@ body > nav .btn:hover {
 
 /* Project Card Styling */
 .project-card {
-  background: var(--bg-surface);
+  background: var(--card-background);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
@@ -494,7 +497,7 @@ body > nav .btn:hover {
 /* ===== ABOUT SECTION ===== */
 .about {
   padding: 80px 0;
-  background: var(--footer-bg);
+  background: var(--bg-secondary);
 }
 
 .about .section-heading h3 {
@@ -640,6 +643,7 @@ body > nav .btn:hover {
   background: var(--accent-color);
   color: var(--bg-primary);
   border: 2px solid var(--accent-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
 }
 
 .btn-primary:hover {
@@ -652,6 +656,7 @@ body > nav .btn:hover {
   background: transparent;
   color: var(--accent-color);
   border: 2px solid var(--accent-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
 }
 
 .btn-secondary:hover {
@@ -1109,10 +1114,14 @@ footer p {
   overflow: hidden;
   max-height: 340px;
   transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
 }
 
 .peek-section.expanded .peek-grid-wrapper {
   max-height: 5000px;
+  box-shadow: none;
+  padding: 8px 12px;
+  margin: 0 -12px; 
 }
 
 .peek-grid {
@@ -1132,9 +1141,9 @@ footer p {
   background: linear-gradient(
     to bottom,
     rgba(var(--bg-primary-rgb), 0) 0%,
-    rgba(var(--bg-primary-rgb), 0.6) 40%,
-    rgba(var(--bg-primary-rgb), 0.95) 80%,
-    rgba(var(--bg-primary-rgb), 1) 100%
+    rgba(var(--bg-primary-rgb), 0.3) 40%,
+    rgba(var(--bg-primary-rgb), 0.75) 80%,
+    rgba(var(--bg-primary-rgb), 0.95) 100%
   );
   display: flex;
   align-items: flex-end;
@@ -1150,12 +1159,12 @@ footer p {
   pointer-events: none;
 }
 
-/* "Show all X videos" button */
+/* "Show all # videos" button */
 .peek-expand-btn {
   pointer-events: all;
-  background: rgba(var(--bg-surface-rgb), 0.85);
-  border: 1px solid rgba(var(--primary-color-rgb), 0.4);
-  color: var(--accent-color);
+  background: rgba(var(--secondary-color-rgb), 1);
+  border: 1px solid rgba(var(--secondary-color-rgb), 0.4);
+  color: var(--text-color);
   padding: 0.5rem 1.6rem;
   border-radius: 4px;
   font-family: "Montserrat", sans-serif;
@@ -1171,9 +1180,10 @@ footer p {
 }
 
 .peek-expand-btn:hover {
-  background: rgba(var(--primary-color-rgb), 0.15);
-  border-color: var(--accent-color);
+  background: rgba(var(--secondary-color-rgb), 0.15);
+  border-color: var(--primary-color);
   transform: translateY(-1px);
+  color: var(--primary-color);
 }
 
 /* Playlist link — hidden when collapsed, fades in on expand */
