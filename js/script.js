@@ -65,3 +65,23 @@ let myDate = document.querySelector("#datee");
 
 const yes = new Date().getFullYear();
 myDate.innerHTML = yes;
+
+/* ===== Hamburger Menu ===== */
+var hamburger = document.querySelector(".hamburger-menu");
+var navMenu = document.querySelector(".menu");
+
+if (hamburger && navMenu) {
+  hamburger.addEventListener("click", function () {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  });
+
+  // Close navbar when a menu link is clicked
+  var menuLinks = navMenu.querySelectorAll("a");
+  menuLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    });
+  });
+}

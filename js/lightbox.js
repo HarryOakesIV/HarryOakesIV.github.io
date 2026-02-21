@@ -89,10 +89,15 @@
 
   // --- Event Listeners ---
 
-  // Intercept clicks on YouTube links inside #projects
-  var projectsSection = document.getElementById("projects");
-  if (projectsSection) {
-    projectsSection.addEventListener("click", function (e) {
+  // Intercept clicks on YouTube links inside #projects and #archive
+  var sections = [
+    document.getElementById("projects"),
+    document.getElementById("archive")
+  ];
+
+  sections.forEach(function (section) {
+    if (!section) return;
+    section.addEventListener("click", function (e) {
       var link = e.target.closest("a");
       if (!link) return;
 
@@ -109,7 +114,7 @@
         openLightbox(parsed);
       }
     });
-  }
+  });
 
   // Close on X button
   closeBtn.addEventListener("click", function (e) {
