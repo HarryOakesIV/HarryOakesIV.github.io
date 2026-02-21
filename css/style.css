@@ -27,7 +27,8 @@
   --color-black: #000000;
 
   /* RGB channels for rgba() */
-  --bg-primary-rgb: 0, 0, 0;
+  --bg-primary-rgb: 237, 240, 243;
+  --bg-secondary-rgb: 0, 0, 0;
   --bg-surface-rgb: 26, 47, 74;
   --primary-color-rgb: 241, 163, 78;
   --secondary-color-rgb: 255, 211, 92;
@@ -75,10 +76,23 @@ a {
 
 /* Main styling */
 body {
-  background: var(--bg-primary);
   color: var(--text-color);
   font-family: "Montserrat", sans-serif;
   line-height: 1.5;
+
+  /* ── Background texture ──
+     Swap the url() to your licensed image when ready.
+     Adjust --texture-opacity (0.0–1.0) to control texture visibility.
+     0.0 = steel color only, 1.0 = full texture, no color.
+  */
+  --texture-opacity: 0.35;
+  background-color: var(--bg-primary);
+  background-image:
+    linear-gradient(rgba(var(--bg-primary-rgb), calc(1 - var(--texture-opacity))),
+                    rgba(var(--bg-primary-rgb), calc(1 - var(--texture-opacity)))),
+    url("../assets/marble-texture.jpg");
+  background-repeat: repeat;
+  background-attachment: scroll;
 }
 
 /* Navbar — targets only the top-level site nav, not .category-nav */
@@ -90,6 +104,7 @@ body > nav {
   z-index: 20;
   background: var(--footer-bg);
   border-bottom: 1px solid rgba(var(--text-secondary-rgb), 0.15);
+  overflow: visible;
 }
 
 body > nav > .container {
@@ -325,6 +340,10 @@ body > nav .btn:hover {
     gap: 0;
     border-left: 1px solid rgba(var(--text-secondary-rgb), 0.15);
     border-bottom: 1px solid rgba(var(--text-secondary-rgb), 0.15);
+    .nav-avatar {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   .menu.active {
@@ -364,7 +383,7 @@ body > nav .btn:hover {
 /* ===== PROJECTS SECTION ENHANCEMENTS ===== */
 .projects {
   padding: 5px 0 80px;
-  background: var(--bg-primary);
+  /* background removed — inherits body texture */
 }
 
 .section-heading {
@@ -1140,10 +1159,10 @@ footer p {
   height: 140px;
   background: linear-gradient(
     to bottom,
-    rgba(var(--bg-primary-rgb), 0) 0%,
-    rgba(var(--bg-primary-rgb), 0.3) 40%,
-    rgba(var(--bg-primary-rgb), 0.75) 80%,
-    rgba(var(--bg-primary-rgb), 0.95) 100%
+    rgba(var(--bg-secondary-rgb), 0) 0%,
+    rgba(var(--bg-secondary-rgb), 0.3) 40%,
+    rgba(var(--bg-secondary-rgb), 0.75) 80%,
+    rgba(var(--bg-secondary-rgb), 0.95) 100%
   );
   display: flex;
   align-items: flex-end;
@@ -1252,4 +1271,58 @@ footer p {
   .peek-title {
     font-size: 0.95rem;
   }
+}
+
+/* ===== STICKY NAV AVATAR ===== */
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* The nav-con needs position:relative so the avatar can anchor to it */
+.nav-con {
+  position: relative;
+}
+
+.nav-avatar {
+  /* Center horizontally in the navbar */
+  position: absolute;
+  left: 50%;
+  /* Vertically: center in nav, then push down by 30% of avatar size */
+  top: 50%;
+  transform: translate(-50%, -50%) translateY(30%) scale(0.5);
+
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 25;
+
+  /* Ring to separate it from content behind */
+  box-shadow: 0 0 0 3px var(--footer-bg), 0 3px 12px rgba(0, 0, 0, 0.35);
+
+  /* Start hidden */
+  opacity: 0;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  pointer-events: none;
+}
+
+.nav-avatar.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) translateY(30%) scale(1);
+  pointer-events: auto;
+}
+
+.nav-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Fade hero portrait when nav avatar is showing */
+.hero-img img.faded {
+  opacity: 0.15;
+  transform: scale(0.92);
 }
