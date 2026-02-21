@@ -9,16 +9,16 @@
 /* variables — Navy & Amber palette */
 :root {
   /* Colors */
-  --primary-color: #f1a34e;
-  --secondary-color: #f8b05b;
-  --bg-primary: #0f2139;
+  --primary-color: #ffcd42;
+  --secondary-color: #ffd35c;
+  --bg-primary: #edf0f3;
   --bg-surface: #0f2139;
-  --text-color: #e8e0d4;
-  --text-color-two: #e8e0d4;
+  --text-color: #222222;
+  --text-color-two: #edf0f3;
   --text-secondary: #7a97a7;
-  --bg-secondary: #1a2f4a;
-  --card-background: #1a2f4a;
-  --bg-secondary-two: #e8e0d4;
+  --bg-secondary: #091525;
+  --card-background: #f4f4f4;
+  --bg-secondary-two: #111111;
   --accent-color: #f1a34e;
   --accent-hover: #f8b05b;
   --footer-bg: #091525;
@@ -363,7 +363,7 @@ body > nav .btn:hover {
 /* ===== PROJECTS SECTION ENHANCEMENTS ===== */
 .projects {
   padding: 80px 0;
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
 }
 
 .section-heading {
