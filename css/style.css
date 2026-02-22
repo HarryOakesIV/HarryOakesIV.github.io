@@ -127,6 +127,11 @@ body > nav > .container {
   white-space: nowrap;
 }
 
+/* Full name shown by default, initials hidden */
+.logo-short {
+  display: none;
+}
+
 .menu {
   display: flex;
   align-items: center;
@@ -326,24 +331,23 @@ body > nav .btn:hover {
 }
 
 @media (max-width: 670px) {
+  /* ── Hamburger dropdown: compact & centered ── */
   .menu {
     position: fixed;
     top: 70px;
     right: -100vw;
     flex-direction: column;
+    align-items: center;
     background: var(--footer-bg);
-    width: 70%;
-    padding: 2rem;
+    width: auto;
+    min-width: 180px;
+    padding: 1rem 1.5rem;
     border-radius: 0 0 0 8px;
     box-shadow: var(--shadow);
     transition: right 0.3s ease;
     gap: 0;
     border-left: 1px solid rgba(var(--text-secondary-rgb), 0.15);
     border-bottom: 1px solid rgba(var(--text-secondary-rgb), 0.15);
-    .nav-avatar {
-      width: 40px;
-      height: 40px;
-    }
   }
 
   .menu.active {
@@ -351,8 +355,9 @@ body > nav .btn:hover {
   }
 
   .menu li {
-    margin-bottom: 1rem;
-    width: 100%;
+    margin-bottom: 0.5rem;
+    width: auto;
+    text-align: center;
   }
 
   .menu li a {
@@ -365,6 +370,15 @@ body > nav .btn:hover {
 
   .hamburger-menu {
     display: block;
+  }
+
+  /* ── Swap full name for initials on mobile ── */
+  .logo-full {
+    display: none;
+  }
+
+  .logo-short {
+    display: inline;
   }
 }
 
@@ -741,7 +755,9 @@ body > nav .btn:hover {
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-primary {
@@ -1405,6 +1421,12 @@ footer p {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.nav-avatar a {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 /* Fade hero portrait when nav avatar is showing */

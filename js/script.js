@@ -113,28 +113,52 @@ if (hamburger && navMenu) {
   observer.observe(heroAvatar);
 })();
 
-/* ── Background Texture Parallax ──
-   Moves the body background at a fraction of the scroll speed.
-   Adjust PARALLAX_SPEED to taste:
-     0.0 = fully fixed (no movement)
-     0.5 = moves at half scroll speed (default)
-     1.0 = moves with scroll (no parallax)
+/* ── Background Texture Parallax (smooth lerp) ──
+   Instead of snapping to the target position each frame,
+   we interpolate toward it. This smooths out the coarse
+   scroll deltas from mouse wheels and touch input.
+
+   PARALLAX_SPEED  – fraction of scroll applied (0 = fixed, 1 = no parallax)
+   LERP_FACTOR     – how fast we catch up each frame (0.05 = silky, 0.15 = snappy)
 */
 
 (function () {
-  const PARALLAX_SPEED = 0.95;
+  var PARALLAX_SPEED = 0.16;
+  var LERP_FACTOR    = 0.25;
 
-  let ticking = false;
+  var currentY = window.scrollY * PARALLAX_SPEED;
+  var targetY  = currentY;
+  var running  = false;
+
+  function tick() {
+    currentY += (targetY - currentY) * LERP_FACTOR;
+
+    if (Math.abs(targetY - currentY) < 0.5) {
+      currentY = targetY;
+      running = false;
+    }
+
+    document.body.style.backgroundPositionY = currentY + "px";
+
+    if (running) {
+      requestAnimationFrame(tick);
+    }
+  }
 
   window.addEventListener("scroll", function () {
-    if (!ticking) {
-      window.requestAnimationFrame(function () {
-        const offset = window.scrollY * PARALLAX_SPEED;
-        document.body.style.backgroundPositionY = offset + "px";
-        ticking = false;
-      });
-      ticking = true;
+    targetY = window.scrollY * PARALLAX_SPEED;
+
+    if (!running) {
+      running = true;
+      requestAnimationFrame(tick);
     }
   });
 })();
 
+var navAvatarEl = document.getElementById('navAvatar');
+if (navAvatarEl) {
+  navAvatarEl.style.cursor = 'pointer';
+  navAvatarEl.addEventListener('click', function () {
+    document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
+  });
+}
