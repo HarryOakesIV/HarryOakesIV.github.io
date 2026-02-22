@@ -372,13 +372,16 @@ body > nav .btn:hover {
     display: block;
   }
 
-  /* ── Swap full name for initials on mobile ── */
-  .logo-full {
-    display: none;
+  /* ── Two-line full name on mobile ── */
+  .logo a {
+    white-space: normal;
+    max-width: 100px;
+    display: inline-block;
+    line-height: 1.2;
   }
 
   .logo-short {
-    display: inline;
+    display: none;
   }
 }
 
