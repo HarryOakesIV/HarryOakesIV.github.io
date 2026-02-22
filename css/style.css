@@ -535,6 +535,92 @@ body > nav .btn:hover {
   margin-bottom: 1.5rem;
 }
 
+/* ===== PHOTO GALLERY (visual extension of About) ===== */
+.photos {
+  background: var(--bg-secondary);          /* same as .about */
+  padding: 0 0 80px;                        /* no top padding — flows from about */
+}
+
+.photos-layout {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Feature image */
+.photos-feature {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.photos-feature img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.25s ease;
+}
+
+.photos-feature img.fading {
+  opacity: 0;
+}
+
+/* Thumbnail strip */
+.photos-thumbs {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  justify-content: center;
+}
+
+.photos-thumbs .thumb {
+  flex: 0 0 auto;
+  width: calc((100% - 50px) / 6);     /* 6 thumbs with 5 gaps */
+  aspect-ratio: 1 / 1;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+  opacity: 0.5;
+  transition: opacity 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+}
+
+.photos-thumbs .thumb:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+.photos-thumbs .thumb.active {
+  opacity: 1;
+  border-color: var(--accent-color);
+}
+
+.photos-thumbs .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive — stack thumbnails smaller on mobile */
+@media (max-width: 576px) {
+  .photos-layout {
+    max-width: 100%;
+  }
+
+  .photos-thumbs .thumb {
+    width: calc((100% - 25px) / 6);   /* tighter on small screens */
+  }
+
+  .photos-feature {
+    aspect-ratio: 4 / 3;
+  }
+}
+
 /* ===== CONTACT SECTION ===== */
 .contact {
   padding: 80px 0;
