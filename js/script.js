@@ -123,8 +123,8 @@ if (hamburger && navMenu) {
 */
 
 (function () {
-  var PARALLAX_SPEED = 0.16;
-  var LERP_FACTOR    = 0.25;
+  var PARALLAX_SPEED = 0.10;
+  var LERP_FACTOR    = 0.45;
 
   var currentY = window.scrollY * PARALLAX_SPEED;
   var targetY  = currentY;
@@ -138,7 +138,7 @@ if (hamburger && navMenu) {
       running = false;
     }
 
-    document.body.style.backgroundPositionY = currentY + "px";
+    document.body.style.backgroundPositionY = -currentY + "px";
 
     if (running) {
       requestAnimationFrame(tick);
