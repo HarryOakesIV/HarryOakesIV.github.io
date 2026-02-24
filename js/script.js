@@ -162,3 +162,79 @@ if (navAvatarEl) {
     document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
   });
 }
+
+/* ===== Scroll Hint — "More below" chevron =====
+   Dynamically injected so we don't need to touch index.html.
+   Placed inside the #contact section, after its .container. */
+(function () {
+  var contact = document.getElementById('contact');
+  if (!contact) return;
+
+  // Build the hint element
+  var hint = document.createElement('div');
+  hint.className = 'scroll-hint';
+  hint.setAttribute('aria-hidden', 'true');
+
+  var label = document.createElement('span');
+  label.className = 'scroll-hint__label';
+  label.textContent = 'More below';
+
+  var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('class', 'scroll-hint__chevron');
+  svg.setAttribute('viewBox', '0 0 24 24');
+  svg.setAttribute('fill', 'none');
+  svg.setAttribute('stroke', 'currentColor');
+  svg.setAttribute('stroke-width', '2.5');
+  svg.setAttribute('stroke-linecap', 'round');
+  svg.setAttribute('stroke-linejoin', 'round');
+
+  var polyline = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+  polyline.setAttribute('points', '6 9 12 15 18 9');
+  svg.appendChild(polyline);
+
+  hint.appendChild(label);
+  hint.appendChild(svg);
+
+  // Insert at end of the contact section (after .container, before </section>)
+  contact.appendChild(hint);
+
+  // Show the hint only while the contact section is in view
+  // AND the archive section has not yet scrolled into view.
+  var archive = document.getElementById('archive');
+  var contactVisible = false;
+  var archiveVisible = false;
+
+  function updateHint() {
+    if (contactVisible && !archiveVisible) {
+      hint.classList.add('visible');
+    } else {
+      hint.classList.remove('visible');
+    }
+  }
+
+  // Watch the contact section
+  var contactObserver = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        contactVisible = entry.isIntersecting;
+        updateHint();
+      });
+    },
+    { threshold: 0.3 }
+  );
+  contactObserver.observe(contact);
+
+  // Watch the archive section — once its top edge appears, hide the hint
+  if (archive) {
+    var archiveObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          archiveVisible = entry.isIntersecting;
+          updateHint();
+        });
+      },
+      { threshold: 0.05 }
+    );
+    archiveObserver.observe(archive);
+  }
+})();
