@@ -91,7 +91,9 @@ body {
     linear-gradient(rgba(var(--bg-primary-rgb), calc(1 - var(--texture-opacity))),
                     rgba(var(--bg-primary-rgb), calc(1 - var(--texture-opacity)))),
     url("../assets/marble-texture.jpg");
+  /* background-repeat: repeat; */
   background-repeat: repeat;
+  /* background-size: cover; */
   background-attachment: scroll;
 }
 
@@ -433,7 +435,8 @@ body > nav .btn:hover {
 
 /* Project Card Styling */
 .project-card {
-  background: var(--card-background);
+  /* background: var(--card-background); */
+  background: rgba(244, 244, 244, 0.3);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
@@ -443,6 +446,7 @@ body > nav .btn:hover {
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  background: rgba(244, 244, 244, 0.6);
 }
 
 .project-img {
@@ -972,23 +976,73 @@ footer p {
   margin-top: 0.5rem;
 }
 
-/* ===== "SEE MORE" LINKS ===== */
-.see-more-link {
-  display: block;
-  width: fit-content;
-  margin-top: 1.25rem;
-  margin-bottom: 0.5rem;
-  font-size: 0.82rem;
-  font-weight: var(--weight-semibold);
-  color: var(--text-color);
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  transition: color 0.25s ease, transform 0.25s ease;
+/* ===== PLAYLIST CARD ===== */
+.playlist-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  /* background: var(--card-background); */
+  background: rgba(244, 244, 244, 0.3);
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.see-more-link:hover {
+.playlist-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  background: rgba(244, 244, 244, 0.6);
+}
+
+/* Hide the thumbnail area */
+.playlist-card__thumbnail {
+  display: none;
+}
+
+/* Center the info block within the full card */
+.playlist-card__info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  width: 100%;
+}
+
+/* Match video card title styling */
+.playlist-card__info h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  transition: color 0.2s ease;
+}
+
+.playlist-card:hover .playlist-card__info h4 {
   color: var(--accent-color);
+}
+
+.playlist-card__arrow {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.playlist-card:hover .playlist-card__arrow {
   transform: translateX(4px);
+}
+
+/* Hide the subtitle */
+.playlist-card__info p {
+  display: none;
 }
 
 /* ===== PROJECT NOTES (e.g. "Full film in Other Works →") ===== */
@@ -1018,9 +1072,9 @@ footer p {
     margin-top: 2rem;
   }
 
-  .see-more-link {
+  /* .see-more-link {
     font-size: 0.78rem;
-  }
+  } */
 }
 
 /* ===== VIDEO LIGHTBOX ===== */
