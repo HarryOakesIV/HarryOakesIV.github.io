@@ -174,6 +174,13 @@ if (navAvatarEl) {
   var hint = document.createElement('div');
   hint.className = 'scroll-hint';
   hint.setAttribute('aria-hidden', 'true');
+  hint.style.cursor = 'pointer';
+  hint.addEventListener('click', function () {
+    var archive = document.getElementById('archive');
+    if (archive) {
+      archive.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
 
   var label = document.createElement('span');
   label.className = 'scroll-hint__label';
